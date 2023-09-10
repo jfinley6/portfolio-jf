@@ -1,8 +1,11 @@
+import GlobalStyle from "./globalStyles"
+
 function App() {
   return (
-    <div>
-      App File
-    </div>
+    <>
+      <GlobalStyle />
+        App File
+    </>
   );
 }
 
