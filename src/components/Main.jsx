@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HomeButton from "../subComponents/HomeButton";
+import { LogoComponent } from "../subComponents/LogoComponent";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -29,6 +30,7 @@ const Main = () => {
     <MainContainer>
       <Container>
         <HomeButton />
+        <LogoComponent />
       </Container>
     </MainContainer>
   );
