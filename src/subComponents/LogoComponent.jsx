@@ -6,6 +6,11 @@ const Logo = styled.h1`
   color: ${(props) => props.theme.text};
   font-family: 'Pacifico', cursive;
 
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  z-index: 3;
+
 `;
 
 export const LogoComponent = () => {
