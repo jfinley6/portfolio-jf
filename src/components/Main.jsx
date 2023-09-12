@@ -56,6 +56,29 @@ const Work = styled(Link)`
   z-index: 1;
 `;
 
+const BottomBar = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+`
+
+const About = styled(Link)`
+  text-decoration: none;
+  color: ${(props) => props.theme.text};
+  z-index: 1;
+`;
+
+const Skills = styled(Link)`
+  text-decoration: none;
+  color: ${(props) => props.theme.text};
+  z-index: 1;
+`;
+
 const Main = () => {
   return (
     <MainContainer>
@@ -64,14 +87,22 @@ const Main = () => {
         <LogoComponent />
         <SocialIcons />
         <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
-          <h3>Say Hi...</h3>
+          <h2>Say Hi...</h2>
         </Contact>
         <Blog to="/blog">
-          <h3>Blog</h3>
+          <h2>Blog</h2>
         </Blog>
         <Work to="/work">
-          <h3>Work</h3>
+          <h2>Work</h2>
         </Work>
+        <BottomBar>
+          <About to="/about">
+            <h2>About</h2>
+          </About>
+          <Skills to="/skills">
+            <h2>My Skills</h2>
+          </Skills>
+        </BottomBar>
       </Container>
     </MainContainer>
   );
