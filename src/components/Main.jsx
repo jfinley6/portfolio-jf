@@ -4,6 +4,7 @@ import HomeButton from "../subComponents/HomeButton";
 import { LogoComponent } from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import { Link } from "react-router-dom";
+import { CenterAnimation } from "./AllSvgs";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -79,6 +80,25 @@ const Skills = styled(Link)`
   z-index: 1;
 `;
 
+const Center = styled.button`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+
+  &>:last-child {
+    padding-top: 1rem;
+  }
+`
+
 const Main = () => {
   return (
     <MainContainer>
@@ -86,6 +106,10 @@ const Main = () => {
         <HomeButton />
         <LogoComponent />
         <SocialIcons />
+        <Center>
+          <CenterAnimation stroke='#808080' width={"40vw"} />
+          <span>Click Here </span>
+        </Center>
         <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
           <h2>Say Hi...</h2>
         </Contact>
