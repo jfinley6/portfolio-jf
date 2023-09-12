@@ -106,10 +106,12 @@ const Main = () => {
         <HomeButton />
         <LogoComponent />
         <SocialIcons />
+
         <Center>
           <CenterAnimation stroke='#808080' width={"40vw"} />
           <span>Click Here </span>
         </Center>
+
         <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
           <h2>Say Hi...</h2>
         </Contact>
@@ -119,6 +121,7 @@ const Main = () => {
         <Work to="/work">
           <h2>Work</h2>
         </Work>
+        
         <BottomBar>
           <About to="/about">
             <h2>About</h2>
