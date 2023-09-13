@@ -49,13 +49,12 @@ const Blog = styled(Link)`
 
 const Work = styled(Link)`
   text-decoration: none;
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  color: ${(props) => (props.$click ? props.theme.body : props.theme.text)};
   position: absolute;
   top: 50%;
   left: calc(2rem + 1vw);
   transform: translate(-50%, -50%) rotate(-90deg);
   z-index: 1;
-  transition: color 1s linear;
 `;
 
 const BottomBar = styled.div`
@@ -71,9 +70,8 @@ const BottomBar = styled.div`
 
 const About = styled(Link)`
   text-decoration: none;
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  color: ${(props) => (props.$click ? props.theme.body : props.theme.text)};
   z-index: 1;
-  transition: color 1s linear;
 `;
 
 const Skills = styled(Link)`
@@ -127,8 +125,8 @@ const Main = () => {
     <MainContainer>
       <Container>
         <HomeButton />
-        <LogoComponent />
-        <SocialIcons click={click} />
+        <LogoComponent theme={click ? 'darkTheme' : 'lightTheme'}/>
+        <SocialIcons click={click} theme={click ? 'darkTheme' : 'lightTheme'} />
 
         <DarkDiv click={click} />
 
@@ -143,12 +141,12 @@ const Main = () => {
         <Blog to="/blog">
           <h2>Blog</h2>
         </Blog>
-        <Work to="/work" click={click}>
+        <Work to="/work" $click={click}>
           <h2>Work</h2>
         </Work>
 
         <BottomBar>
-          <About to="/about" click={click}>
+          <About to="/about" $click={click}>
             <h2>About</h2>
           </About>
           <Skills to="/skills">
