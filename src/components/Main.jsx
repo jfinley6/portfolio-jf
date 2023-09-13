@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HomeButton from "../subComponents/HomeButton";
 import { LogoComponent } from "../subComponents/LogoComponent";
@@ -66,7 +66,7 @@ const BottomBar = styled.div`
 
   display: flex;
   justify-content: space-evenly;
-`
+`;
 
 const About = styled(Link)`
   text-decoration: none;
@@ -82,8 +82,9 @@ const Skills = styled(Link)`
 
 const Center = styled.button`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${(props) => (props.click ? "80%" : "50%")};
+  left: ${(props) => (props.click ? "88%" : "50%")};
+  width: ${(props) => (props.click ? "20%" : "35%")};
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -91,15 +92,23 @@ const Center = styled.button`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
+  transition: all 1s ease;
 
-  &>:last-child {
-    padding-top: 1rem;
+  & > :last-child {
+    padding-top: 0.3rem;
+    display: ${(props) => (props.click ? "none" : "inline-block")};
   }
-`
+`;
 
 const Main = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => {
+    setClick((click) => !click);
+  };
+
   return (
     <MainContainer>
       <Container>
@@ -107,9 +116,9 @@ const Main = () => {
         <LogoComponent />
         <SocialIcons />
 
-        <Center>
-          <CenterAnimation stroke='#808080' width={"40vw"} />
-          <span>Click Here </span>
+        <Center click={click}>
+          <CenterAnimation onClick={() => handleClick()} stroke="#808080" />
+          <span>Click Here</span>
         </Center>
 
         <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
@@ -121,7 +130,7 @@ const Main = () => {
         <Work to="/work">
           <h2>Work</h2>
         </Work>
-        
+
         <BottomBar>
           <About to="/about">
             <h2>About</h2>
