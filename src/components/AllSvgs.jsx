@@ -67,14 +67,15 @@ export const CenterAnimation = (props) => {
       viewBox="0 0 45 45"
       xmlns="http://www.w3.org/2000/svg"
       stroke={props.stroke}
+      style={{display: 'block', margin: 'auto'}}
     >
       <g
         fill={"none"}
         fillRule="evenodd"
-        transform="translate(1 1)"
+        transform="translate(1, 1))"
         strokeWidth="0"
       >
-        <circle cx="22" cy="22" r="6" strokeOpacity="0">
+        <circle cx="50%" cy="50%" r="6" strokeOpacity="0">
           <animate
             attributeName="r"
             begin="1.5s"
@@ -100,7 +101,7 @@ export const CenterAnimation = (props) => {
             repeatCount="indefinite"
           />
         </circle>
-        <circle cx="22" cy="22" r="6" strokeOpacity="0">
+        <circle cx="50%" cy="50%" r="6" strokeOpacity="0">
           <animate
             attributeName="r"
             begin="3s"
@@ -126,7 +127,7 @@ export const CenterAnimation = (props) => {
             repeatCount="indefinite"
           />
         </circle>
-        <circle cx="22" cy="22" r="8">
+        <circle cx="50%" cy="50%" r="8">
           <animate
             attributeName="r"
             begin="0s"
