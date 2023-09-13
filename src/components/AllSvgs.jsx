@@ -72,7 +72,7 @@ export const CenterAnimation = (props) => {
       <g
         fill={"none"}
         fillRule="evenodd"
-        transform="translate(1, 1))"
+        transform="translate(1, 1)"
         strokeWidth="0"
       >
         <circle cx="50%" cy="50%" r="6" strokeOpacity="0">
