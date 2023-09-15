@@ -4,6 +4,8 @@ import img from "/blog-bg.jpg";
 import { LogoComponent } from "../subComponents/LogoComponent";
 import HomeButton from "../subComponents/HomeButton";
 import SocialIcons from "../subComponents/SocialIcons";
+import { Blogs } from "../data/BlogData";
+import BlogComponent from "./BlogComponent";
 
 const MainContainer = styled.div`
   background-image: url(${img});
@@ -11,8 +13,6 @@ const MainContainer = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  width: 100vw;
-  height: 100vh;
 `;
 
 const Container = styled.div`
@@ -46,6 +46,9 @@ const BlogPage = () => {
 
         <Center>
           <Grid>
+            {Blogs.map((blog) => {
+              return <BlogComponent key={blog.id} blog={blog} />;
+            })}
           </Grid>
         </Center>
       </Container>
