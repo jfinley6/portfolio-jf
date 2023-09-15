@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GitHubBtn, LinkedInBtn } from "../components/AllSvgs";
 import styled from "styled-components";
-import { darkTheme } from "../components/Themes"
+import { darkTheme } from "../components/Themes";
 
 const Icons = styled.div`
   display: flex;
@@ -40,13 +40,21 @@ const SocialIcons = (props) => {
   return (
     <Icons>
       <Link to="https://github.com/jfinley6" target="_blank">
-        <GitHubBtn width={25} height={25} fill={props.theme === 'darkTheme' ? darkTheme.text : darkTheme.body} />
+        <GitHubBtn
+          width={25}
+          height={25}
+          fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+        />
       </Link>
       <Link to="https://linkedin.com/in/john-tyler-finley" target="_blank">
-        <LinkedInBtn width={25} height={25} fill={props.theme === 'darkTheme' ? darkTheme.text : darkTheme.body} />
+        <LinkedInBtn
+          width={25}
+          height={25}
+          fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+        />
       </Link>
 
-      <Line color={props.theme}/>
+      <Line color={props.theme} />
     </Icons>
   );
 };
