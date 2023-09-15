@@ -5,6 +5,7 @@ import { LogoComponent } from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import { Link } from "react-router-dom";
 import { CenterAnimation } from "./AllSvgs";
+import Intro from "./Intro";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -153,6 +154,7 @@ const Main = () => {
           </Skills>
         </BottomBar>
       </Container>
+      {click ? <Intro click={click} /> : null}
     </MainContainer>
   );
 };
