@@ -6,6 +6,7 @@ import SocialIcons from "../subComponents/SocialIcons";
 import { Link } from "react-router-dom";
 import { CenterAnimation } from "./AllSvgs";
 import Intro from "./Intro";
+import { motion } from "framer-motion";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -125,8 +126,8 @@ const Main = () => {
     <MainContainer>
       <Container>
         <HomeButton />
-        <LogoComponent theme={click ? 'darkTheme' : 'lightTheme'}/>
-        <SocialIcons click={click} theme={click ? 'darkTheme' : 'lightTheme'} />
+        <LogoComponent theme={click ? "darkTheme" : "lightTheme"} />
+        <SocialIcons click={click} theme={click ? "darkTheme" : "lightTheme"} />
 
         <DarkDiv click={click} />
 
@@ -136,21 +137,31 @@ const Main = () => {
         </Center>
 
         <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
-          <h2>Say Hi...</h2>
+          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            Say Hi...
+          </motion.h2>
         </Contact>
         <Blog to="/blog">
-          <h2>Blog</h2>
+          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            Blog
+          </motion.h2>
         </Blog>
         <Work to="/work" $click={click}>
-          <h2>Work</h2>
+          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            Work
+          </motion.h2>
         </Work>
 
         <BottomBar>
           <About to="/about" $click={click}>
-            <h2>About</h2>
+            <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              About
+            </motion.h2>
           </About>
           <Skills to="/skills">
-            <h2>My Skills</h2>
+            <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              My Skills
+            </motion.h2>
           </Skills>
         </BottomBar>
       </Container>
