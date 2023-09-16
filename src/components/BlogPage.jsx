@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import img from "/blog-bg.jpg";
 import { LogoComponent } from "../subComponents/LogoComponent";
@@ -28,24 +28,36 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10rem;
+  padding-top: 7rem;
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
-  grid-gap: calc(1rem + 2vw);
+  grid-gap: calc(1rem + 2vw) calc(1rem + 5vw);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const BlogPage = () => {
   const reverseBlogs = [...Blogs].reverse();
 
+  const [numbers, setNumbers] = useState(0);
+
+  useEffect(() => {
+    let num = (window.innerHeight - 70) / 30;
+    setNumbers(parseInt(num))
+  }, [])
+  
   return (
     <MainContainer>
       <Container>
         <HomeButton />
         <LogoComponent />
         <SocialIcons />
+        <AnchorComponent numbers={numbers}/>
 
         <Center>
           <Grid>
