@@ -140,6 +140,7 @@ export const CenterAnimation = (props) => {
 export const Anchor = (props) => {
   return (
     <svg
+      style={{ cursor: "pointer" }}
       onClick={() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       }}
