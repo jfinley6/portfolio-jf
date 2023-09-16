@@ -27,6 +27,10 @@ const Icons = styled.div`
   > a:hover {
     scale: 1.3;
   }
+
+  @media (max-width: 768px) {
+    left: 1.25rem;
+  }
 `;
 
 const Line = styled.span`
