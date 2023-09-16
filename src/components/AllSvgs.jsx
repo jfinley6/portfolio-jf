@@ -77,7 +77,7 @@ export const CenterAnimation = (props) => {
         <circle cx="50%" cy="50%" r="6" strokeOpacity="0">
           <animate
             attributeName="r"
-            begin="1.5s"
+            begin="0s"
             dur="3s"
             values="6;22"
             calcMode="linear"
@@ -85,7 +85,7 @@ export const CenterAnimation = (props) => {
           />
           <animate
             attributeName="stroke-opacity"
-            begin="1.5s"
+            begin="0s"
             dur="3s"
             values="1;0"
             calcMode="linear"
@@ -93,7 +93,7 @@ export const CenterAnimation = (props) => {
           />
           <animate
             attributeName="stroke-width"
-            begin="1.5s"
+            begin="0s"
             dur="3s"
             values="2;0"
             calcMode="linear"
@@ -103,7 +103,7 @@ export const CenterAnimation = (props) => {
         <circle cx="50%" cy="50%" r="6" strokeOpacity="0">
           <animate
             attributeName="r"
-            begin="3s"
+            begin="1.5s"
             dur="3s"
             values="6;22"
             calcMode="linear"
@@ -111,7 +111,7 @@ export const CenterAnimation = (props) => {
           />
           <animate
             attributeName="stroke-opacity"
-            begin="3s"
+            begin="1.5s"
             dur="3s"
             values="1;0"
             calcMode="linear"
@@ -119,7 +119,7 @@ export const CenterAnimation = (props) => {
           />
           <animate
             attributeName="stroke-width"
-            begin="3s"
+            begin="1.5s"
             dur="3s"
             values="2;0"
             calcMode="linear"
@@ -129,7 +129,7 @@ export const CenterAnimation = (props) => {
         <circle cx="50%" cy="50%" r="8">
           <animate
             attributeName="r"
-            begin="0s"
+            begin="1.5s"
             dur="1.5s"
             values="6;1;2;3;4;5;6"
             calcMode="linear"
