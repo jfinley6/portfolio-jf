@@ -55,11 +55,13 @@ const Title = styled.h3`
 
 const HashTags = styled.div`
   padding: 0.5rem 0;
+  width: 100%;
 `;
 
 const Tag = styled.span`
   padding-right: 0.5rem;
-  text-wrap: wrap;
+  display: inline-block;
+  white-space: normal;
 `;
 
 const Date = styled.span`
