@@ -28,17 +28,18 @@ const Home = styled.button`
     box-shadow: 0 0 8px 6px rgba(72, 113, 247, 0.2);
   }
 
-  &>*:first-child {
+  & > *:first-child {
     text-decoration: none;
-    color: inherit
+    color: inherit;
   }
 `;
 
 const HomeButton = () => {
   return (
     <Home>
-      <Link to="/" />
-      <HomeBtn width={30} height={30} fill="currentColor" />
+      <Link to="/">
+        <HomeBtn width={30} height={30} fill="currentColor" />
+      </Link>
     </Home>
   );
 };
