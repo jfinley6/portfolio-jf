@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import "../assets/BlogComponentStylesheet.css";
 
 const Box = styled(Link)`
   width: calc(10rem + 15vw);
@@ -78,6 +79,27 @@ const BlogComponent = (props) => {
       </HashTags>
       <Date>{date}</Date>
     </Box>
+    // <Link className="blogLink" to={link} target="_blank">
+    //   <div
+    //     className="blogImage"
+    //     style={{
+    //       backgroundImage: `url(${imgSrc})`,
+    //     }}
+    //   />
+    //   <h3 className="blogName">
+    //     {name}
+    //   </h3>
+    //   <div className="hashTags">
+    //     {tags.map((tag, id) => {
+    //       return (
+    //         <span className="tagSpan" key={id}>
+    //           #{tag}
+    //         </span>
+    //       );
+    //     })}
+    //   </div>
+    //   <span className="dateSpan">{date}</span>
+    // </Link>
   );
 };
 
