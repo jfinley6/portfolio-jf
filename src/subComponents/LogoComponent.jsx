@@ -15,7 +15,7 @@ const Logo = styled.h1`
 
   @media (max-width: 768px) {
     left: 1.25rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 `;
 
