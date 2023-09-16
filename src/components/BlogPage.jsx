@@ -37,6 +37,8 @@ const Grid = styled.div`
 `;
 
 const BlogPage = () => {
+  const reverseBlogs = [...Blogs].reverse()
+
   return (
     <MainContainer>
       <Container>
@@ -46,9 +48,9 @@ const BlogPage = () => {
 
         <Center>
           <Grid>
-            {Blogs.map((blog) => {
-              return <BlogComponent key={blog.id} blog={blog} />;
-            })}
+            {reverseBlogs.map((blog) => (
+               <BlogComponent key={blog.id} blog={blog} />
+            ))}
           </Grid>
         </Center>
       </Container>
