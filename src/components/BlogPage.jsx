@@ -6,6 +6,7 @@ import HomeButton from "../subComponents/HomeButton";
 import SocialIcons from "../subComponents/SocialIcons";
 import { Blogs } from "../data/BlogData";
 import BlogComponent from "./BlogComponent";
+import AnchorComponent from "../subComponents/AnchorComponent";
 
 const MainContainer = styled.div`
   background-image: url(${img});
@@ -37,7 +38,7 @@ const Grid = styled.div`
 `;
 
 const BlogPage = () => {
-  const reverseBlogs = [...Blogs].reverse()
+  const reverseBlogs = [...Blogs].reverse();
 
   return (
     <MainContainer>
@@ -49,7 +50,7 @@ const BlogPage = () => {
         <Center>
           <Grid>
             {reverseBlogs.map((blog) => (
-               <BlogComponent key={blog.id} blog={blog} />
+              <BlogComponent key={blog.id} blog={blog} />
             ))}
           </Grid>
         </Center>
