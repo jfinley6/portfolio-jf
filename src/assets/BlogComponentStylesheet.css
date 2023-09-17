@@ -48,10 +48,13 @@
 
 .hashTags {
   padding: 0.5rem 0;
+  width: 100%;
 }
 
 .tagSpan {
   padding-right: 0.5rem;
+  display: inline-block;
+  white-space: normal;
 }
 
 .dateSpan {
