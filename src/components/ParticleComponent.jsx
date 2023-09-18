@@ -17,10 +17,9 @@ const Box = styled.div`
 
 const ParticleComponent = (props) => {
 
-  const particlesInit = useCallback((engine) => {
-    loadSlim(engine);
-    loadFull(engine)
-  }, []);
+const particlesInit = useCallback(async (engine) => {
+  await loadFull(engine);
+}, []);
 
   return (
     <Box>
