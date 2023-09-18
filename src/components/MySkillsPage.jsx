@@ -6,6 +6,7 @@ import { BsFillDatabaseFill } from "react-icons/bs";
 import SocialIcons from "../subComponents/SocialIcons";
 import { LogoComponent } from "../subComponents/LogoComponent";
 import HomeButton from "../subComponents/HomeButton";
+import ParticleComponent from "./ParticleComponent";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -69,7 +70,7 @@ const Description = styled.div`
     text-transform: uppercase;
   }
 
-  ${Main}:hover &{
+  ${Main}:hover & {
     color: ${(props) => props.theme.body};
   }
 `;
@@ -80,6 +81,7 @@ const MySkillsPage = () => {
       <HomeButton />
       <LogoComponent theme="light" />
       <SocialIcons theme="light" />
+      <ParticleComponent theme={lightTheme} />
       <Box>
         <Main>
           <Title>
