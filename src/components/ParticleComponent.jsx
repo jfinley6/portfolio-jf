@@ -1,8 +1,10 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { loadFull } from "tsparticles";
+import configDark from "../config/particlesjs-config.json";
+import configLight from "../config/particlesjs-config-light.json";
 
 const Box = styled.div`
   position: absolute;
@@ -14,59 +16,15 @@ const Box = styled.div`
 `;
 
 const ParticleComponent = (props) => {
-  const { particles } = props;
-  const options = useMemo(() => {
-    return {
-      background: {
-        color: {
-          value: `${props.theme.body}`,
-        },
-        image: "",
-        position: "",
-        repeat: "",
-        size: "",
-        opacity: 1,
-      },
-      backgroundMask: {
-        composite: "destination-out",
-        cover: {
-          color: {
-            value: `${props.theme.body}`,
-          },
-          opacity: 1,
-        },
-        enable: false,
-      },
-      defaultThemes: {},
-      delay: 0,
-      duration: 0,
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          resize: true,
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-        },
-      },
-      particles: particles,
-      detectRetina: true,
-    };
-  }, []);
 
   const particlesInit = useCallback((engine) => {
     loadSlim(engine);
+    loadFull(engine)
   }, []);
 
   return (
     <Box>
-      <Particles init={particlesInit} options={options} />
+      <Particles init={particlesInit} options={props.theme === 'light' ? configLight : configDark} />
     </Box>
   );
 };
