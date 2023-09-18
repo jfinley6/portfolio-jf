@@ -71,37 +71,37 @@ const Date = styled.span`
 const BlogComponent = (props) => {
   const { name, tags, date, imgSrc, link } = props.blog;
   return (
-    <Box to={link} target="_blank">
-      <Image img={imgSrc} />
-      <Title>{name}</Title>
-      <HashTags>
-        {tags.map((tag, id) => {
-          return <Tag key={id}>#{tag}</Tag>;
-        })}
-      </HashTags>
-      <Date>{date}</Date>
-    </Box>
-    // <Link className="blogLink" to={link} target="_blank">
-    //   <div
-    //     className="blogImage"
-    //     style={{
-    //       backgroundImage: `url(${imgSrc})`,
-    //     }}
-    //   />
-    //   <h3 className="blogName">
-    //     {name}
-    //   </h3>
-    //   <div className="hashTags">
+    // <Box to={link} target="_blank">
+    //   <Image img={imgSrc} />
+    //   <Title>{name}</Title>
+    //   <HashTags>
     //     {tags.map((tag, id) => {
-    //       return (
-    //         <span className="tagSpan" key={id}>
-    //           #{tag}
-    //         </span>
-    //       );
+    //       return <Tag key={id}>#{tag}</Tag>;
     //     })}
-    //   </div>
-    //   <span className="dateSpan">{date}</span>
-    // </Link>
+    //   </HashTags>
+    //   <Date>{date}</Date>
+    // </Box>
+    <Link className="blogLink" to={link} target="_blank">
+      <div
+        className="blogImage"
+        style={{
+          backgroundImage: `url(${imgSrc})`,
+        }}
+      />
+      <h3 className="blogName">
+        {name}
+      </h3>
+      <div className="hashTags">
+        {tags.map((tag, id) => {
+          return (
+            <span className="tagSpan" key={id}>
+              #{tag}
+            </span>
+          );
+        })}
+      </div>
+      <span className="dateSpan">{date}</span>
+    </Link>
   );
 };
 
