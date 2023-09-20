@@ -10,7 +10,7 @@ export const Work = [
     github: "https://github.com/jfinley6/disc-golf-store-frontend",
   },
   {
-    id: 1,
+    id: 2,
     name: "React Weather Browser",
     description:
       "A weather browser built with React and incorporating Google's autocomplete API",
@@ -20,7 +20,7 @@ export const Work = [
     github: "https://github.com/jfinley6/disc-golf-store-frontend",
   },
   {
-    id: 1,
+    id: 3,
     name: "DiscussionHub",
     description:
       "A discussion forum where you can create communities, posts, and comments",
