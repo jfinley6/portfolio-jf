@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GitHubBtn, LinkedInBtn } from "../components/AllSvgs";
+import { GitHubBtn, LinkedInBtn, ResumeBtn } from "../components/AllSvgs";
 import styled from "styled-components";
 import { darkTheme } from "../components/Themes";
 
@@ -52,6 +52,13 @@ const SocialIcons = (props) => {
       </Link>
       <Link to="https://linkedin.com/in/john-tyler-finley" target="_blank">
         <LinkedInBtn
+          width={25}
+          height={25}
+          fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+        />
+      </Link>
+      <Link to="https://linkedin.com/in/john-tyler-finley" target="_blank">
+        <ResumeBtn
           width={25}
           height={25}
           fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
