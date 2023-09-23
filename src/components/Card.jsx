@@ -51,16 +51,16 @@ const HashTags = styled.div`
 `;
 
 const Tag = styled.span`
-  padding-right: 0.5rem;
   display: inline-block;
   white-space: normal;
   font-size: calc(0.8em + 0.3vw);
-  margin-right: 1rem;
+  margin-right: 0.8rem;
 `;
 
 const Footer = styled.footer`
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 10vh;
 `;
 
 const ProjectLink = styled(Link)`
@@ -70,6 +70,9 @@ const ProjectLink = styled(Link)`
   padding: 0.5rem calc(2rem);
   border-radius: 0 0 0 50px;
   font-size: 1.1em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 
   ${Box}:hover & {
     background-color: ${(props) => props.theme.text};
@@ -80,6 +83,9 @@ const ProjectLink = styled(Link)`
 const GitLink = styled(Link)`
   color: inherit;
   text-decoration: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 
   ${Box}:hover & {
     & > * {
@@ -108,9 +114,11 @@ const Card = (props) => {
         })}
       </HashTags>
       <Footer>
-        <ProjectLink to={demo} target="_blank">
-          Demo
-        </ProjectLink>
+        {demo ? (
+          <ProjectLink to={demo} target="_blank">
+            Demo
+          </ProjectLink>
+        ) : null}
         <GitLink to={github} target="_blank">
           <GitHubBtn width={30} height={30} />
         </GitLink>
