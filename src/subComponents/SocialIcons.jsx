@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { GitHubBtn, LinkedInBtn, ResumeBtn } from "../components/AllSvgs";
 import styled from "styled-components";
 import { darkTheme } from "../components/Themes";
+import Resume from "/JohnFinleyResume.pdf"
 
 const Icons = styled.div`
   display: flex;
@@ -57,7 +58,7 @@ const SocialIcons = (props) => {
           fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
         />
       </Link>
-      <Link to="https://linkedin.com/in/john-tyler-finley" target="_blank">
+      <Link to={Resume} target="_blank">
         <ResumeBtn
           width={25}
           height={25}
