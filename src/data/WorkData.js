@@ -1,6 +1,7 @@
 import discussionHubImg from "/discussion-hub.png"
 import weatherBrowserImg from "/weather-browser.png"
 import discsImg from "/out-of-bounds-discs.png"
+import redditKeywordImg from "/reddit-keyword-monitor.png"
 
 export const Work = [
   {
@@ -27,7 +28,7 @@ export const Work = [
   },
   {
     id: 3,
-    name: "DiscussionHub",
+    name: "Discussion Hub",
     description:
       "A discussion forum where you can create communities, posts, and comments",
     tags: ["rubyonrails", "bootstrap", "devise"],
@@ -35,5 +36,16 @@ export const Work = [
     demo: "https://discussionhub-51a7c53ae2c9.herokuapp.com/",
     github: "https://github.com/jfinley6/DiscussionHub",
     img: discussionHubImg,
+  },
+  {
+    id: 4,
+    name: "Reddit Keyword Monitor",
+    description:
+      "A tool to monitor Reddit posts for specific keywords and get email notifications for matching posts",
+    tags: ["rubyonrails", "tailwind", "restapi"],
+
+    demo: "",
+    github: "https://github.com/jfinley6/reddit-keyword-monitor",
+    img: redditKeywordImg,
   },
 ];
