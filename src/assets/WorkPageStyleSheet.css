@@ -1,0 +1,19 @@
+.slick-dots li button:before {
+    color: white;
+    opacity: 1;
+    font-size: 1.25vw;
+    margin-top: 2vh;
+}
+
+.slick-dots li.slick-active button:before {
+    color: gray;
+    opacity: 1;
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+.slick-slide > div {
+    margin: 0 10px;
+}
