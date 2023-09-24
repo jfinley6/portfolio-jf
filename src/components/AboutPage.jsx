@@ -75,20 +75,18 @@ const Main = styled.div`
 
 const AboutPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audio = useRef(new Audio(sound));
+  const audioRef = useRef(null);
 
   const playAudio = () => {
-    if (isPlaying) {
-      alert(isPlaying);
-      return null;
-    } else if (!isPlaying) {
-      alert(isPlaying);
-      audio.current.play();
-      setIsPlaying((isPlaying) => !isPlaying);
-      audio.current.addEventListener("ended", (event) => {
-        setIsPlaying((isPlaying) => !isPlaying);
+    if (!isPlaying) {
+      // Play the sound
+      audioRef.current.play();
+      setIsPlaying(true);
+
+      // Add an event listener to reset isPlaying when the sound ends
+      audioRef.current.addEventListener('ended', () => {
+        setIsPlaying(false);
       });
-      return null;
     }
   };
 
@@ -102,6 +100,9 @@ const AboutPage = () => {
 
         <Icon>
           <img src={LukeIcon} alt="luke-skywalker-icon" onClick={playAudio} />
+          <audio ref={audioRef}>
+            <source src={sound} type="audio/mpeg" />
+          </audio>
         </Icon>
 
         <Main>
