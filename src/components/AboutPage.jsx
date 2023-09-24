@@ -77,18 +77,17 @@ const AboutPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audio = useRef(new Audio(sound));
 
-  audio.current.addEventListener("ended", (event) => {
-    setIsPlaying((isPlaying) => !isPlaying);
-  });
-
   const playAudio = () => {
     if (isPlaying) {
-      alert(isPlaying)
+      alert(isPlaying);
       return null;
     } else if (!isPlaying) {
-      alert(isPlaying)
+      alert(isPlaying);
       audio.current.play();
       setIsPlaying((isPlaying) => !isPlaying);
+      audio.current.addEventListener("ended", (event) => {
+        setIsPlaying((isPlaying) => !isPlaying);
+      });
       return null;
     }
   };
@@ -114,11 +113,11 @@ const AboutPage = () => {
           programs that assist companies in providing efficient solutions for
           their customers. I graduated from Washington State University with a
           Bachelor of Science in Mechanical Engineering and completed a Software
-          Engineering program at Flatiron School.<br></br> For my next role, I aspire to
-          join a collaborative team of experienced professionals, where I can
-          contribute my skills and grow by working on exciting and innovative
-          projects.<br></br> In my spare time, I enjoy disc golf, skiing, and
-          running. I am also a big fan of Star Wars!
+          Engineering program at Flatiron School.<br></br> For my next role, I
+          aspire to join a collaborative team of experienced professionals,
+          where I can contribute my skills and grow by working on exciting and
+          innovative projects.<br></br> In my spare time, I enjoy disc golf,
+          skiing, and running. I am also a big fan of Star Wars!
         </Main>
       </Box>
     </ThemeProvider>
