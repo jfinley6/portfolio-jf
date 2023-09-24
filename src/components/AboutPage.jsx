@@ -83,10 +83,10 @@ const AboutPage = () => {
 
   const playAudio = () => {
     if (isPlaying) {
-      alert("playing")
+      alert(isPlaying)
       return null;
-    } else {
-      alert("not playing")
+    } else if (!isPlaying) {
+      alert(isPlaying)
       audio.current.play();
       setIsPlaying((isPlaying) => !isPlaying);
       return null;
