@@ -31,7 +31,7 @@ const Title = styled.h2`
 `;
 
 const Description = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "Karla", sans-serif;
   font-weight: 500;
 
@@ -44,6 +44,8 @@ const HashTags = styled.div`
   padding: 0.5rem 0;
   width: 100%;
   border-top: 2px solid ${(props) => props.theme.body};
+  top: 0%;
+  position: absolute;
 
   ${Box}:hover & {
     border-top: 2px solid ${(props) => props.theme.text};
@@ -60,7 +62,7 @@ const Tag = styled.span`
 const Footer = styled.footer`
   position: relative;
   width: 100%;
-  height: 10vh;
+  height: 15vh;
 `;
 
 const ProjectLink = styled(Link)`
@@ -108,12 +110,12 @@ const Card = (props) => {
       <Title>{name}</Title>
       <Img src={img} />
       <Description>{description}</Description>
+      <Footer>
       <HashTags>
         {tags.map((tag, id) => {
           return <Tag key={id}>#{tag}</Tag>;
         })}
       </HashTags>
-      <Footer>
         {demo ? (
           <ProjectLink to={demo} target="_blank">
             Demo
