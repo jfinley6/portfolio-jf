@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { GitHubBtn } from "./AllSvgs";
+import { motion } from "framer-motion";
 
-const Box = styled.div`
-  height: 65vh;
+const Box = styled(motion.div)`
+  height: 60vh;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
   padding: 1.5rem 1.5rem;
@@ -14,6 +15,7 @@ const Box = styled.div`
   justify-content: space-evenly;
   border: 1px solid ${(props) => props.theme.body};
   transition: all 0.2s ease;
+  z-index: 3;
 
   &:hover {
     background-color: ${(props) => props.theme.body};
@@ -102,20 +104,33 @@ const Img = styled.img`
   object-fit: contain;
 `;
 
+const Item = {
+  hidden: {
+    scale: 0
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5
+    }
+  }
+};
+
 const Card = (props) => {
   const { id, name, description, tags, demo, github, img } = props.data;
 
   return (
-    <Box key={id}>
+    <Box key={id} variants={Item}>
       <Title>{name}</Title>
       <Img src={img} />
       <Description>{description}</Description>
       <Footer>
-      <HashTags>
-        {tags.map((tag, id) => {
-          return <Tag key={id}>#{tag}</Tag>;
-        })}
-      </HashTags>
+        <HashTags>
+          {tags.map((tag, id) => {
+            return <Tag key={id}>#{tag}</Tag>;
+          })}
+        </HashTags>
         {demo ? (
           <ProjectLink to={demo} target="_blank">
             Demo
