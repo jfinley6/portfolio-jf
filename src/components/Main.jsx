@@ -97,6 +97,7 @@ const Center = styled.button`
   align-items: center;
   justify-content: center;
   transition: all 1s ease;
+  z-index: 1;
 
   & > :last-child {
     padding-top: 0.3rem;
@@ -113,6 +114,18 @@ const DarkDiv = styled.div`
   background-color: #000;
   z-index: 1;
   transition: width 1s ease;
+`;
+
+const Click = styled.span`
+  position: absolute;
+  top: ${(props) => (props.click ? "80%" : "50%")};
+  left: ${(props) => (props.click ? "88%" : "50%")};
+  transform: translate(-50%, -50%);
+  font-size: ${(props) => (props.click ? "0.7rem" : "1rem")};
+  font-weight: 500;
+  font-family: 'Karla';
+  z-index: 0;
+  transition: all 1s ease;
 `;
 
 const Main = () => {
@@ -133,8 +146,8 @@ const Main = () => {
 
         <Center click={click}>
           <CenterAnimation onClick={() => handleClick()} stroke="#808080" />
-          <span>Click Here</span>
         </Center>
+          <Click click={click}>Click Here</Click>
 
         <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
           <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
