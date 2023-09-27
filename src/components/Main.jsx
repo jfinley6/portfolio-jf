@@ -35,7 +35,7 @@ const Contact = styled(Link)`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 2rem;
-  right: calc(1rem + 2vw);
+  right: calc(1.5rem + 2vw);
   z-index: 1;
 `;
 
@@ -123,7 +123,7 @@ const Click = styled.span`
   transform: translate(-50%, -50%);
   font-size: ${(props) => (props.click ? "0.7rem" : "1rem")};
   font-weight: 500;
-  font-family: 'Karla';
+  font-family: "Karla";
   z-index: 0;
   transition: all 1s ease;
 `;
@@ -147,32 +147,87 @@ const Main = () => {
         <Center click={click}>
           <CenterAnimation onClick={() => handleClick()} stroke="#808080" />
         </Center>
-          <Click click={click}>Click Here</Click>
+        <Click click={click}>Click Here</Click>
 
         <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
-          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Say Hi...
           </motion.h2>
         </Contact>
         <Blog to="/blog">
-          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Blog
           </motion.h2>
         </Blog>
         <Work to="/work" $click={click}>
-          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Work
           </motion.h2>
         </Work>
 
         <BottomBar>
           <About to="/about" $click={click}>
-            <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 0.5 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 0.5 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               About
             </motion.h2>
           </About>
           <Skills to="/skills">
-            <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 0.5 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 0.5 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               My Skills
             </motion.h2>
           </Skills>
