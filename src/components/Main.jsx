@@ -6,9 +6,9 @@ import SocialIcons from "../subComponents/SocialIcons";
 import { Link } from "react-router-dom";
 import { CenterAnimation } from "./AllSvgs";
 import Intro from "./Intro";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)`
   background: ${(props) => props.theme.body};
   width: 100vw;
   height: 100dvh;
@@ -136,73 +136,29 @@ const Main = () => {
   };
 
   return (
-    <MainContainer>
-      <Container>
-        <HomeButton />
-        <LogoComponent theme={click ? "darkTheme" : "lightTheme"} />
-        <SocialIcons click={click} theme={click ? "darkTheme" : "lightTheme"} />
-
-        <DarkDiv click={click} />
-
-        <Center click={click}>
-          <CenterAnimation onClick={() => handleClick()} stroke="#808080" />
-        </Center>
-        <Click click={click}>Click Here</Click>
-
-        <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 0.5 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 0.5 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Say Hi...
-          </motion.h2>
-        </Contact>
-        <Blog to="/blog">
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 0.5 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 0.5 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Blog
-          </motion.h2>
-        </Blog>
-        <Work to="/work" $click={click}>
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 0.5 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 0.5 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Work
-          </motion.h2>
-        </Work>
-
-        <BottomBar>
-          <About to="/about" $click={click}>
+      <MainContainer
+        initial={{ opacity: "0%" }}
+        animate={{ opacity: "100%", transition: {
+          type: 'spring',
+          duration: 1.5
+        } }}
+      >
+        <Container>
+          <HomeButton />
+          <LogoComponent theme={click ? "darkTheme" : "lightTheme"} />
+          <SocialIcons
+            click={click}
+            theme={click ? "darkTheme" : "lightTheme"}
+          />
+          <DarkDiv click={click} />
+          <Center click={click}>
+            <CenterAnimation onClick={() => handleClick()} stroke="#808080" />
+          </Center>
+          <Click click={click}>Click Here</Click>
+          <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
             <motion.h2
               initial={{
-                y: 200,
+                y: -200,
                 transition: { type: "spring", duration: 1.5, delay: 0.5 },
               }}
               animate={{
@@ -212,13 +168,13 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              About
+              Say Hi...
             </motion.h2>
-          </About>
-          <Skills to="/skills">
+          </Contact>
+          <Blog to="/blog">
             <motion.h2
               initial={{
-                y: 200,
+                y: -200,
                 transition: { type: "spring", duration: 1.5, delay: 0.5 },
               }}
               animate={{
@@ -228,13 +184,62 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              My Skills
+              Blog
             </motion.h2>
-          </Skills>
-        </BottomBar>
-      </Container>
-      {click ? <Intro click={click} /> : null}
-    </MainContainer>
+          </Blog>
+          <Work to="/work" $click={click}>
+            <motion.h2
+              initial={{
+                y: -200,
+                transition: { type: "spring", duration: 1.5, delay: 0.5 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 0.5 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Work
+            </motion.h2>
+          </Work>
+          <BottomBar>
+            <About to="/about" $click={click}>
+              <motion.h2
+                initial={{
+                  y: 200,
+                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                About
+              </motion.h2>
+            </About>
+            <Skills to="/skills">
+              <motion.h2
+                initial={{
+                  y: 200,
+                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                My Skills
+              </motion.h2>
+            </Skills>
+          </BottomBar>
+        </Container>
+        {click ? <Intro click={click} /> : null}
+      </MainContainer>
   );
 };
 
