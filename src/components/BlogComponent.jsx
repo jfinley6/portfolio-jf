@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "../assets/BlogComponentStylesheet.css";
+import { motion } from "framer-motion";
 
-const Box = styled(Link)`
+const Box = styled(motion(Link))`
   width: calc(10rem + 15vw);
   text-decoration: none;
   height: 20rem;
@@ -66,20 +67,33 @@ const Date = styled.span`
   padding: 0.5rem 0;
 `;
 
+const Item = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+    },
+  },
+};
+
 const BlogComponent = (props) => {
   const { name, tags, date, imgSrc, link } = props.blog;
   return (
-    // <Box to={link} target="_blank">
-    //   <Image img={imgSrc} />
-    //   <Title>{name}</Title>
-    //   <HashTags>
-    //     {tags.map((tag, id) => {
-    //       return <Tag key={id}>#{tag}</Tag>;
-    //     })}
-    //   </HashTags>
-    //   <Date>{date}</Date>
-    // </Box>
-    <Link className="blogLink" to={link} target="_blank">
+    <Box to={link} target="_blank" variants={Item}>
+      <Image img={imgSrc} />
+      <Title>{name}</Title>
+      <HashTags>
+        {tags.map((tag, id) => {
+          return <Tag key={id}>#{tag}</Tag>;
+        })}
+      </HashTags>
+      <Date>{date}</Date>
+    </Box>
+    /* <Link className="blogLink" to={link} target="_blank">
       <div
         className="blogImage"
         style={{
@@ -99,7 +113,7 @@ const BlogComponent = (props) => {
         })}
       </div>
       <span className="dateSpan">{date}</span>
-    </Link>
+    </Link> */
   );
 };
 
