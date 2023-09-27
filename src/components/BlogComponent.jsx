@@ -18,8 +18,6 @@ const Box = styled(Link)`
   flex-direction: column;
   z-index: 5;
 
-  text-wrap: wrap;
-
   &:hover {
     color: ${(props) => props.theme.body};
     background-color: ${(props) => props.theme.text};
