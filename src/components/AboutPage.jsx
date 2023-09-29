@@ -7,6 +7,7 @@ import HomeButton from "../subComponents/HomeButton";
 import ParticleComponent from "./ParticleComponent";
 import LukeIcon from "/luke-icon.png";
 import sound from "/i-am-a-jedi.mp3";
+import { motion } from "framer-motion";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -22,7 +23,7 @@ const float = keyframes`
     100% { transform: translateY(-10px) scale(1)}
 `;
 
-const Icon = styled.div`
+const Icon = styled(motion.div)`
   position: absolute;
   top: 10%;
   right: 5%;
@@ -43,7 +44,7 @@ const Icon = styled.div`
   }
 `;
 
-const Main = styled.div`
+const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   padding: 2rem;
@@ -69,9 +70,19 @@ const Main = styled.div`
     left: calc(2rem + 7vw);
     height: 60vh;
     width: 55vw;
-    font-size: calc(0.4rem + 1vw);
+    font-size: calc(0.45rem + 1vw);
   }
 `;
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 const AboutPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -99,13 +110,27 @@ const AboutPage = () => {
         <ParticleComponent theme="darkTheme" />
 
         <Icon>
-          <img src={LukeIcon} alt="luke-skywalker-icon" onClick={playAudio} />
+          <motion.img
+            initial={{
+              x: "100%",
+              y: "100%",
+              transition: { type: "spring", duration: 3, delay: 0.5 },
+            }}
+            animate={{
+              x: 0,
+              y: 0,
+              transition: { type: "spring", duration: 3, delay: 0.5 },
+            }}
+            src={LukeIcon}
+            alt="luke-skywalker-icon"
+            onClick={playAudio}
+          />
           <audio ref={audioRef}>
             <source src={sound} type="audio/mpeg" />
           </audio>
         </Icon>
 
-        <Main>
+        <Main variants={container} initial="hidden" animate="show">
           As a Programmer/Assembly Technician at Panther Industries, I develop
           and deploy web and desktop applications that simplify workflows and
           improve productivity. I currently use React, Express.js, Python, and
