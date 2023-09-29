@@ -36,9 +36,13 @@ const Description = styled.h2`
   font-size: 1rem;
   font-family: "Karla", sans-serif;
   font-weight: 500;
+  height: 10vh;
+  display: flex;
+  align-items: center;
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
+    height: 5vh;
   }
 `;
 
