@@ -2,6 +2,7 @@ import discussionHubImg from "/discussion-hub.png"
 import weatherBrowserImg from "/weather-browser.png"
 import discsImg from "/out-of-bounds-discs.png"
 import redditKeywordImg from "/reddit-keyword-monitor.png"
+import portfolioImg from "/portfolio.png"
 
 export const Work = [
   {
@@ -47,5 +48,15 @@ export const Work = [
     demo: "",
     github: "https://github.com/jfinley6/reddit-keyword-monitor",
     img: redditKeywordImg,
+  },
+  {
+    id: 5,
+    name: "Portfolio Website",
+    description: "My Portfolio Page built with React and styled-components",
+    tags: ["react", "styled-components", "framer-motion"],
+
+    demo: "https://johnf-portfolio.vercel.app/",
+    github: "https://github.com/jfinley6/portfolio-jf",
+    img: portfolioImg,
   },
 ];
