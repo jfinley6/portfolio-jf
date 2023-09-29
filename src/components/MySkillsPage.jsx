@@ -7,8 +7,9 @@ import SocialIcons from "../subComponents/SocialIcons";
 import { LogoComponent } from "../subComponents/LogoComponent";
 import HomeButton from "../subComponents/HomeButton";
 import ParticleComponent from "./ParticleComponent";
+import { motion } from "framer-motion";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -77,14 +78,24 @@ const Description = styled.div`
   }
 `;
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const MySkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
       <HomeButton />
       <LogoComponent theme="light" />
       <SocialIcons theme="light" />
-      <ParticleComponent theme="light" />
-      <Box>
+      <Box variants={container} initial="hidden" animate="show">
+        <ParticleComponent theme="light" />
         <Main>
           <Title>
             <FaComputer size={56} />
