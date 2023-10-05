@@ -39,7 +39,7 @@ const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
   background-color: ${(props) =>
-    props.color === "darkTheme" ? darkTheme.text : darkTheme.body};
+    props.color === "dark" ? darkTheme.text : darkTheme.body};
 `;
 
 const SocialIcons = (props) => {
@@ -55,7 +55,7 @@ const SocialIcons = (props) => {
           <GitHubBtn
             width={25}
             height={25}
-            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
           />
         </Link>
       </motion.div>
@@ -76,7 +76,7 @@ const SocialIcons = (props) => {
           <LinkedInBtn
             width={25}
             height={25}
-            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
           />
         </Link>
       </motion.div>
@@ -97,7 +97,7 @@ const SocialIcons = (props) => {
           <ResumeBtn
             width={25}
             height={25}
-            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
           />
         </Link>
       </motion.div>
