@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import HomeButton from "../subComponents/HomeButton";
 import { LogoComponent } from "../subComponents/LogoComponent";
@@ -24,18 +24,6 @@ const MainContainer = styled(motion.div)`
   h6 {
     font-family: "Karla", sans-serif;
     font-weight: 500;
-  }
-
-  h2 {
-    ${mediaQueries(40)`
-      font-size:1.2em;
-
-  `};
-
-    ${mediaQueries(30)`
-      font-size:1em;
-
-  `};
   }
 `;
 
@@ -169,6 +157,7 @@ const Click = styled.span`
 const Main = () => {
   const [click, setClick] = useState(false);
   const [path, setpath] = useState("");
+  const [mq, setmq] = useState("")
 
   const handleClick = () => {
     setClick((click) => !click);
@@ -180,7 +169,12 @@ const Main = () => {
   const moveX = {
     x: `${path === "work" ? "100%" : "-100%"}`,
   };
-  const mq = window.matchMedia("(max-width: 50em)").matches;
+
+  useEffect(() => {
+    setInterval(() => {
+      setmq(window.matchMedia("(max-width: 50em)").matches);
+    }, 250)
+  }, [])
 
   return (
     <MainContainer
