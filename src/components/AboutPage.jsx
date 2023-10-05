@@ -9,7 +9,7 @@ import LukeIcon from "/luke-icon.png";
 import sound from "/i-am-a-jedi.mp3";
 import { motion } from "framer-motion";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -103,7 +103,14 @@ const AboutPage = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box>
+      <Box
+        exit={{
+          opacity: 0,
+          transition: {
+            duration: 0.5,
+          },
+        }}
+      >
         <HomeButton />
         <LogoComponent theme="darkTheme" />
         <SocialIcons theme="dark" />
@@ -120,12 +127,6 @@ const AboutPage = () => {
               x: 0,
               y: 0,
               transition: { type: "spring", duration: 3, delay: 0.5 },
-            }}
-            exit={{
-              opacity: 0,
-              transition: {
-                duration: 0.5,
-              },
             }}
             src={LukeIcon}
             alt="luke-skywalker-icon"
