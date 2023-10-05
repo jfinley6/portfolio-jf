@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Me from "/intro-picture.png";
 import { motion } from "framer-motion";
+import { mediaQueries } from "./Themes";
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -30,6 +31,58 @@ const Box = styled(motion.div)`
   border-right: 2px solid ${(props) => props.theme.text};
 
   z-index: 1;
+
+  ${mediaQueries(1200)`
+    width: 65vw;
+  `};
+
+  ${mediaQueries(60)`
+    width: 70vw;
+  `};
+
+  ${mediaQueries(50)`
+    width: 50vw;
+    background-size: 100% 2px;
+
+    flex-direction:column;
+    justify-content:space-between;
+  
+  `};
+
+  ${mediaQueries(40)`
+    width: 60vw;
+    
+  
+  `};
+
+  ${mediaQueries(30)`
+    width: 70vw;
+    
+  
+  `};
+  ${mediaQueries(20)`
+    width: 60vw;
+    
+  
+  `};
+
+  @media only screen and (max-width: 50em) {
+    background: none;
+    border: none;
+    border-top: 2px solid ${(props) => props.theme.body};
+    border-bottom: 2px solid ${(props) => props.theme.text};
+    background-image: linear-gradient(
+        ${(props) => props.theme.body} 50%,
+        ${(props) => props.theme.text} 50%
+      ),
+      linear-gradient(
+        ${(props) => props.theme.body} 50%,
+        ${(props) => props.theme.text} 50%
+      );
+    background-size: 2px 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+  }
 `;
 
 const SubBox = styled.div`
@@ -45,6 +98,48 @@ const SubBox = styled.div`
     width: 100%;
     height: auto;
   }
+
+  ${mediaQueries(50)`
+      width: 100%;
+    height: 50%;
+      .pic {
+    
+    width: 50%;
+    
+  }
+
+  `};
+
+  ${mediaQueries(40)`
+  
+      .pic {
+    
+    width: 60%;
+    
+  }
+
+  `};
+
+  ${mediaQueries(30)`
+     
+
+      .pic {
+    
+    width: 70%;
+    
+  }
+
+  `};
+  ${mediaQueries(20)`
+     
+
+     .pic {
+   
+   width: 60%;
+   
+ }
+
+ `};
 `;
 
 const Text = styled(motion.div)`
