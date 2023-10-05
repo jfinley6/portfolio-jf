@@ -106,7 +106,7 @@ const AboutPage = () => {
       <Box>
         <HomeButton />
         <LogoComponent theme="darkTheme" />
-        <SocialIcons theme="darkTheme" />
+        <SocialIcons theme="dark" />
         <ParticleComponent theme="darkTheme" />
 
         <Icon>
