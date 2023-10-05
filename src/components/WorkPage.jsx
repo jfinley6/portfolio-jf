@@ -77,7 +77,13 @@ const WorkPage = () => {
         <LogoComponent theme="darkTheme" />
         <SocialIcons theme="dark" />
 
-        <Main variants={container} initial="hidden" animate='show'>
+        <Main variants={container} initial="hidden" animate='show' exit={
+      {
+        opacity: 0,
+        transition: {
+          duration: 0.5,
+        }
+      }}>
           <Slider {...settings}>
             {Work.map((k) => (
               <Card key={k.id} data={k} />

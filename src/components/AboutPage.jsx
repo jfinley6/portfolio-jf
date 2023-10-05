@@ -95,7 +95,7 @@ const AboutPage = () => {
       setIsPlaying(true);
 
       // Add an event listener to reset isPlaying when the sound ends
-      audioRef.current.addEventListener('ended', () => {
+      audioRef.current.addEventListener("ended", () => {
         setIsPlaying(false);
       });
     }
@@ -120,6 +120,12 @@ const AboutPage = () => {
               x: 0,
               y: 0,
               transition: { type: "spring", duration: 3, delay: 0.5 },
+            }}
+            exit={{
+              opacity: 0,
+              transition: {
+                duration: 0.5,
+              },
             }}
             src={LukeIcon}
             alt="luke-skywalker-icon"

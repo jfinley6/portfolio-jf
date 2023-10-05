@@ -94,7 +94,13 @@ const MySkillsPage = () => {
       <HomeButton />
       <LogoComponent theme="light" />
       <SocialIcons theme="light" />
-      <Box variants={container} initial="hidden" animate="show">
+      <Box variants={container} initial="hidden" animate="show" exit={
+      {
+        opacity: 0,
+        transition: {
+          duration: 0.5,
+        }
+      }}>
         <ParticleComponent theme="light" />
         <Main>
           <Title>
