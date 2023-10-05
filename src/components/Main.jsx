@@ -130,35 +130,94 @@ const Click = styled.span`
 
 const Main = () => {
   const [click, setClick] = useState(false);
+  const [path, setpath] = useState("");
 
   const handleClick = () => {
     setClick((click) => !click);
   };
 
+  const moveY = {
+    y: "-100%",
+  };
+  const moveX = {
+    x: `${path === "work" ? "100%" : "-100%"}`,
+  };
+
   return (
-      <MainContainer
-        initial={{ opacity: "0%" }}
-        animate={{ opacity: "100%", transition: {
-          type: 'spring',
-          duration: 1.5
-        } }}
-      >
-        <Container>
-          <HomeButton />
-          <LogoComponent theme={click ? "darkTheme" : "lightTheme"} />
-          <SocialIcons
-            click={click}
-            theme={click ? "darkTheme" : "lightTheme"}
-          />
-          <DarkDiv click={click} />
-          <Center click={click}>
-            <CenterAnimation onClick={() => handleClick()} stroke="#808080" />
-          </Center>
-          <Click click={click}>Click Here</Click>
-          <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
+    <MainContainer
+      initial={{ opacity: "0%" }}
+      animate={{
+        opacity: "100%",
+        transition: {
+          type: "spring",
+          duration: 1.5,
+        },
+      }}
+      exit={path === "about" || path === "skills" ? moveY : moveX}
+      transition={{ duration: 0.5, delay: 0.1 }}
+    >
+      <Container>
+        <HomeButton />
+        <LogoComponent theme={click ? "darkTheme" : "lightTheme"} />
+        <SocialIcons click={click} theme={click ? "darkTheme" : "lightTheme"} />
+        <DarkDiv click={click} />
+        <Center click={click}>
+          <CenterAnimation onClick={() => handleClick()} stroke="#808080" />
+        </Center>
+        <Click click={click}>Click Here</Click>
+        <Contact to={"mailto:j.finley92@gmail.com"} target="_blank">
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Say Hi...
+          </motion.h2>
+        </Contact>
+        <Blog to="/blog" onClick={() => setpath("blog")}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Blog
+          </motion.h2>
+        </Blog>
+        <Work to="/work" $click={click} onClick={() => setpath("work")}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 0.5 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Work
+          </motion.h2>
+        </Work>
+        <BottomBar>
+          <About to="/about" $click={click} onClick={() => setpath("about")}>
             <motion.h2
               initial={{
-                y: -200,
+                y: 200,
                 transition: { type: "spring", duration: 1.5, delay: 0.5 },
               }}
               animate={{
@@ -168,13 +227,13 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              Say Hi...
+              About
             </motion.h2>
-          </Contact>
-          <Blog to="/blog">
+          </About>
+          <Skills to="/skills" onClick={() => setpath("skills")}>
             <motion.h2
               initial={{
-                y: -200,
+                y: 200,
                 transition: { type: "spring", duration: 1.5, delay: 0.5 },
               }}
               animate={{
@@ -184,62 +243,13 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              Blog
+              My Skills
             </motion.h2>
-          </Blog>
-          <Work to="/work" $click={click}>
-            <motion.h2
-              initial={{
-                y: -200,
-                transition: { type: "spring", duration: 1.5, delay: 0.5 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: "spring", duration: 1.5, delay: 0.5 },
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Work
-            </motion.h2>
-          </Work>
-          <BottomBar>
-            <About to="/about" $click={click}>
-              <motion.h2
-                initial={{
-                  y: 200,
-                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
-                }}
-                animate={{
-                  y: 0,
-                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                About
-              </motion.h2>
-            </About>
-            <Skills to="/skills">
-              <motion.h2
-                initial={{
-                  y: 200,
-                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
-                }}
-                animate={{
-                  y: 0,
-                  transition: { type: "spring", duration: 1.5, delay: 0.5 },
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                My Skills
-              </motion.h2>
-            </Skills>
-          </BottomBar>
-        </Container>
-        {click ? <Intro click={click} /> : null}
-      </MainContainer>
+          </Skills>
+        </BottomBar>
+      </Container>
+      {click ? <Intro click={click} /> : null}
+    </MainContainer>
   );
 };
 
