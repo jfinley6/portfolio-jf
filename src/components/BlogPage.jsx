@@ -50,7 +50,7 @@ const container = {
     opacity: 1,
     transition: {
       staggerChildren: 0.5,
-      duration: 0.5
+      duration: 1.5
     }
   }
 }
