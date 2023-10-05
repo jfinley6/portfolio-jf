@@ -75,7 +75,7 @@ const WorkPage = () => {
       <Box>
         <HomeButton />
         <LogoComponent theme="darkTheme" />
-        <SocialIcons theme="darkTheme" />
+        <SocialIcons theme="dark" />
 
         <Main variants={container} initial="hidden" animate='show'>
           <Slider {...settings}>
