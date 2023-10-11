@@ -66,10 +66,10 @@ const Main = styled(motion.div)`
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     left: calc(2rem + 7vw);
     height: 60vh;
-    width: 55vw;
+    width: 60vw;
     font-size: calc(0.45rem + 1vw);
   }
 `;
