@@ -19,6 +19,24 @@ export const Blogs = [
   },
   {
     id: 3,
+    name: "Interesting JavaScript Tips",
+    tags: ["javascript", "beginners", "programming", "tutorial"],
+    date: "6 Oct, 2022",
+    imgSrc:
+      "https://res.cloudinary.com/practicaldev/image/fetch/s--3NnbJX-S--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fgvezgij191t2hlc9okn.jpeg",
+    link: "https://dev.to/jtfinley/interesting-javascript-tips-5b84",
+  },
+  {
+    id: 4,
+    name: "Fun CSS Tricks",
+    tags: ["css", "beginners", "programming", "tutorial"],
+    date: "6 Oct, 2022",
+    imgSrc:
+      "https://res.cloudinary.com/practicaldev/image/fetch/s--c7dhoxyn--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ke1dihm79qyeprhd3wnq.jpeg",
+    link: "https://dev.to/jtfinley/fun-css-tricks-1chl",
+  },
+  {
+    id: 5,
     name: "Dynamic Page Titles in Ruby on Rails",
     tags: ["ruby", "rails", "beginners", "tutorial"],
     date: "29 Nov, 2022",
