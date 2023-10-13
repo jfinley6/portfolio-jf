@@ -11,7 +11,7 @@ export const Blogs = [
   {
     id: 2,
     name: "Rails Command Line Tips and Tricks",
-    tags: ["ruby", "rails", "beginners", "computerscience"],
+    tags: ["ruby", "rubyonrails", "beginners", "computerscience"],
     date: "6 Oct, 2022",
     imgSrc:
       "https://res.cloudinary.com/practicaldev/image/fetch/s--IyI9LtKg--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pdfwqpwb4b2izik2iobj.png",
@@ -38,7 +38,7 @@ export const Blogs = [
   {
     id: 5,
     name: "Dynamic Page Titles in Ruby on Rails",
-    tags: ["ruby", "rails", "beginners", "tutorial"],
+    tags: ["ruby", "rubyonrails", "beginners", "tutorial"],
     date: "29 Nov, 2022",
     imgSrc:
       "https://res.cloudinary.com/practicaldev/image/fetch/s--LczzsNgS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jqlmqbbg9cmjmmxdul8v.png",
