@@ -44,4 +44,13 @@ export const Blogs = [
       "https://res.cloudinary.com/practicaldev/image/fetch/s--LczzsNgS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jqlmqbbg9cmjmmxdul8v.png",
     link: "https://dev.to/jtfinley/dynamic-page-titles-in-ruby-on-rails-4e29",
   },
+  {
+    id: 6,
+    name: "Basics of Styled-Componets",
+    tags: ["react", "tutorial", "webdev", "javascript"],
+    date: "24 Oct, 2023",
+    imgSrc:
+      "https://res.cloudinary.com/practicaldev/image/fetch/s--NGi_h-PT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3cf4dn7f97xs8b0ir7f9.png",
+    link: "https://dev.to/jtfinley/basics-of-styled-components-404a",
+  },
 ];
