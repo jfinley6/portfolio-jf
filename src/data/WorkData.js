@@ -13,7 +13,7 @@ export const Work = [
     description: "A website where users can see if the Rockies got a double yesterday to get a free double cheeseburger",
     tags: ["python", "flask"],
 
-    demo: "https://rockies-double-checker.onrender.com/",
+    demo: "",
     github: "https://github.com/jfinley6/did-the-rockies-get-a-double-yesterday",
     img: rockiesDoubleImg,
   },
