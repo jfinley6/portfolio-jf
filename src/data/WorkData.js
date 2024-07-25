@@ -34,7 +34,7 @@ export const Work = [
       "A disc golf e-commerce store built using React and Ruby on Rails",
     tags: ["react", "rubyonrails", "bootstrap", "bootstrap"],
 
-    demo: "https://outofboundsdiscs.netlify.app/",
+    demo: "",
     github: "https://github.com/jfinley6/disc-golf-store-frontend",
     img: discsImg,
   },
@@ -56,7 +56,7 @@ export const Work = [
       "A discussion forum where you can create communities, posts, and comments",
     tags: ["rubyonrails", "bootstrap", "devise"],
 
-    demo: "https://discussionhub-51a7c53ae2c9.herokuapp.com/",
+    demo: "",
     github: "https://github.com/jfinley6/DiscussionHub",
     img: discussionHubImg,
   },
